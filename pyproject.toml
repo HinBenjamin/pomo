@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pomo-cli"
+version = "1.0.0"
+description = "Un minuteur Pomodoro en ligne de commande moderne et interactif avec suivi des sessions et statistiques."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Benjamin Hin", email = "benjamin.hin@agrocampus-ouest.fr" }
+]
+keywords = ["pomodoro", "cli", "terminal", "timer", "productivity", "focus"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console :: Curses",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+
+[project.optional-dependencies]
+figlet = ["pyfiglet"]
+
+[project.scripts]
+pomo = "pomo:main"
+pomodoro = "pomo:main"
+
+[tool.setuptools]
+py-modules = ["pomo"]
